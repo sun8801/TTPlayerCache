@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { "sun" => "sun8801@users.noreply.github.com" }
 
   s.platform     = :ios, "7.0"
-  s.ios.deployment_target = "11.0"
+  s.ios.deployment_target = "7.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

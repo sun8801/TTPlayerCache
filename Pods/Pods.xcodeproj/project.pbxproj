@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E6FD65C1E6E807D82E1F9566ACAD549 /* TTResourceLoaderData.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AF62C3899A096F2CDE5D6E945ED43C /* TTResourceLoaderData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EA3E81DF6CDC87E09876C19072F40FA /* TTResourceLoaderCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 97366B06381FFB7D1F2C52E53D6A4BDB /* TTResourceLoaderCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32806350F8F0D313517B6A4C16E2646E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD557A2102BE8D905DBEEB3FF4A03DE /* UIKit.framework */; };
+		45485D5650FEE42183276FA61A50CC5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1910F896DDC39405742E429B51006A3C /* Foundation.framework */; };
+		58EC9EEA4EB4BD88E010AA3C06219F7D /* TTResourceLoaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 00539350EA0E8C12EDCDBC883BBD3CE6 /* TTResourceLoaderCache.m */; };
+		5F9FA686BFE66EE8DBDB48B30BF04E87 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A0118AA160373BD8FA179227FF15D36B /* Reachability.m */; };
+		71D39DD9A4AB503FDBF514B4D2F22828 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6281249F1F614853F0A566BBE3AE23B7 /* AVFoundation.framework */; };
+		84635841ECB73B4247BAACC1E4F5D5CD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329CDDB2D5D34E425741E5D860695207 /* MobileCoreServices.framework */; };
+		874F43928837E50DC80AA9DFFA12D63A /* TTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B8EBA86E91CEFB25476C6EDD3E3FBE /* TTReachabilityManager.m */; };
+		8C65A32D886D628E54A73AD5B508F66E /* TTPlayerCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5755D8F9F95FD13C5B64632937157E1E /* TTPlayerCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D4E1877ECE620894E7B115DA6B3F630 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8DEB821E97B02BD117ABA480AB77CC /* SystemConfiguration.framework */; };
+		990DC2714DF5AF0FF72831763B0E4437 /* TTResourceLoaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E1C864D2E169767ED5916E9448F63B00 /* TTResourceLoaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3B9AA54619F3402C003179B1D910549 /* TTReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCC46225E226E0F3E2755ABE33CBC73 /* TTReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B28BB0A57DDCBE27752CC6A1135CFC60 /* TTResourceLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C95AB4A8B2D71F907FF1B5A0C9916B /* TTResourceLoaderDelegate.m */; };
+		C694D934AC0042D218B9AE7E3CCF7203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1910F896DDC39405742E429B51006A3C /* Foundation.framework */; };
+		D7BF893E3CD85CC6B3B3F2014F72B63C /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = EDED724C5DB4EEC654C2C08C8E02A824 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E459FB41E8C67CD36F71D5BAC7D7970A /* TTResourceLoaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = F703CBD5F1A267519E3421F3E338AF03 /* TTResourceLoaderData.m */; };
+		EE4964EC696E5730D242B7544A26470E /* TTPlayerCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFD2C9C22B22CD33E65548020DAF3D4 /* TTPlayerCache-dummy.m */; };
+		F059DC5EFA0C71F83BEC97DF0A563E9A /* Pods-TTPlayerCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD863BAFA47D52172788D04E19602A0 /* Pods-TTPlayerCache-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D88164D0D870272C0455D6ACE634FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 200AA24C31CA548C3310DA365FAD6FEA;
+			remoteInfo = TTPlayerCache;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00539350EA0E8C12EDCDBC883BBD3CE6 /* TTResourceLoaderCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTResourceLoaderCache.m; path = Source/TTPlayerCache/TTResourceLoaderCache.m; sourceTree = "<group>"; };
+		073D04C8F0310BF3EA58BD0423B4EE21 /* Pods-TTPlayerCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TTPlayerCache.release.xcconfig"; sourceTree = "<group>"; };
+		0AD863BAFA47D52172788D04E19602A0 /* Pods-TTPlayerCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TTPlayerCache-dummy.m"; sourceTree = "<group>"; };
+		0BBE59F71EE64BE220426CCCD69E1013 /* libPods-TTPlayerCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TTPlayerCache.a"; path = "libPods-TTPlayerCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BD557A2102BE8D905DBEEB3FF4A03DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1005349B033EA7C6B5B33443F8993AFF /* Pods-TTPlayerCache-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TTPlayerCache-resources.sh"; sourceTree = "<group>"; };
+		1910F896DDC39405742E429B51006A3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1DFD2C9C22B22CD33E65548020DAF3D4 /* TTPlayerCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTPlayerCache-dummy.m"; sourceTree = "<group>"; };
+		20B8EBA86E91CEFB25476C6EDD3E3FBE /* TTReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTReachabilityManager.m; path = Source/TTPlayerCache/TTReachabilityManager.m; sourceTree = "<group>"; };
+		2CCC46225E226E0F3E2755ABE33CBC73 /* TTReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTReachabilityManager.h; path = Source/TTPlayerCache/TTReachabilityManager.h; sourceTree = "<group>"; };
+		329CDDB2D5D34E425741E5D860695207 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		36C95AB4A8B2D71F907FF1B5A0C9916B /* TTResourceLoaderDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTResourceLoaderDelegate.m; path = Source/TTPlayerCache/TTResourceLoaderDelegate.m; sourceTree = "<group>"; };
+		42AF62C3899A096F2CDE5D6E945ED43C /* TTResourceLoaderData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTResourceLoaderData.h; path = Source/TTPlayerCache/TTResourceLoaderData.h; sourceTree = "<group>"; };
+		4439D402346AA1E2D77D027A2B70B0C9 /* Pods-TTPlayerCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TTPlayerCache.debug.xcconfig"; sourceTree = "<group>"; };
+		5755D8F9F95FD13C5B64632937157E1E /* TTPlayerCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTPlayerCache.h; path = Source/TTPlayerCache/TTPlayerCache.h; sourceTree = "<group>"; };
+		6281249F1F614853F0A566BBE3AE23B7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		6FA855922F3025382C2B94B3E4F49424 /* TTPlayerCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTPlayerCache-prefix.pch"; sourceTree = "<group>"; };
+		8BDA97AFFFFB021D8A894B465F948AE8 /* libTTPlayerCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTTPlayerCache.a; path = libTTPlayerCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97366B06381FFB7D1F2C52E53D6A4BDB /* TTResourceLoaderCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTResourceLoaderCache.h; path = Source/TTPlayerCache/TTResourceLoaderCache.h; sourceTree = "<group>"; };
+		A0118AA160373BD8FA179227FF15D36B /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Source/TTPlayerCache/Reachability2.0/Reachability.m; sourceTree = "<group>"; };
+		A7F3215C3AB7D4F2F8D989397494B553 /* Pods-TTPlayerCache-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TTPlayerCache-frameworks.sh"; sourceTree = "<group>"; };
+		AC415D3D10AF09904EFFC41870539E8F /* TTPlayerCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTPlayerCache.xcconfig; sourceTree = "<group>"; };
+		AF6098A9A0C1227A720DAD27BA66650B /* Pods-TTPlayerCache-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TTPlayerCache-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E1C864D2E169767ED5916E9448F63B00 /* TTResourceLoaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTResourceLoaderDelegate.h; path = Source/TTPlayerCache/TTResourceLoaderDelegate.h; sourceTree = "<group>"; };
+		E275287D7E4CE744BD940E63F2D21B96 /* Pods-TTPlayerCache-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TTPlayerCache-acknowledgements.plist"; sourceTree = "<group>"; };
+		EC8DEB821E97B02BD117ABA480AB77CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		EDED724C5DB4EEC654C2C08C8E02A824 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Source/TTPlayerCache/Reachability2.0/Reachability.h; sourceTree = "<group>"; };
+		F703CBD5F1A267519E3421F3E338AF03 /* TTResourceLoaderData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTResourceLoaderData.m; path = Source/TTPlayerCache/TTResourceLoaderData.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF70D4A1077AA5D4760D3C17E0BE98D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45485D5650FEE42183276FA61A50CC5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55BF526EDD74A016DE500EA96D5E9A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D39DD9A4AB503FDBF514B4D2F22828 /* AVFoundation.framework in Frameworks */,
+				C694D934AC0042D218B9AE7E3CCF7203 /* Foundation.framework in Frameworks */,
+				84635841ECB73B4247BAACC1E4F5D5CD /* MobileCoreServices.framework in Frameworks */,
+				8D4E1877ECE620894E7B115DA6B3F630 /* SystemConfiguration.framework in Frameworks */,
+				32806350F8F0D313517B6A4C16E2646E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB3809650202AAB19881DB41912CE66 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22354C46738D3E59EAB1C2C5C16528EA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC415D3D10AF09904EFFC41870539E8F /* TTPlayerCache.xcconfig */,
+				1DFD2C9C22B22CD33E65548020DAF3D4 /* TTPlayerCache-dummy.m */,
+				6FA855922F3025382C2B94B3E4F49424 /* TTPlayerCache-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TTPlayerCache";
+			sourceTree = "<group>";
+		};
+		46B1A411CE4004994B079BE896809839 /* TTPlayerCache */ = {
+			isa = PBXGroup;
+			children = (
+				EDED724C5DB4EEC654C2C08C8E02A824 /* Reachability.h */,
+				A0118AA160373BD8FA179227FF15D36B /* Reachability.m */,
+				5755D8F9F95FD13C5B64632937157E1E /* TTPlayerCache.h */,
+				2CCC46225E226E0F3E2755ABE33CBC73 /* TTReachabilityManager.h */,
+				20B8EBA86E91CEFB25476C6EDD3E3FBE /* TTReachabilityManager.m */,
+				97366B06381FFB7D1F2C52E53D6A4BDB /* TTResourceLoaderCache.h */,
+				00539350EA0E8C12EDCDBC883BBD3CE6 /* TTResourceLoaderCache.m */,
+				42AF62C3899A096F2CDE5D6E945ED43C /* TTResourceLoaderData.h */,
+				F703CBD5F1A267519E3421F3E338AF03 /* TTResourceLoaderData.m */,
+				E1C864D2E169767ED5916E9448F63B00 /* TTResourceLoaderDelegate.h */,
+				36C95AB4A8B2D71F907FF1B5A0C9916B /* TTResourceLoaderDelegate.m */,
+				22354C46738D3E59EAB1C2C5C16528EA /* Support Files */,
+			);
+			name = TTPlayerCache;
+			path = TTPlayerCache;
+			sourceTree = "<group>";
+		};
+		5FB3809650202AAB19881DB41912CE66 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6281249F1F614853F0A566BBE3AE23B7 /* AVFoundation.framework */,
+				1910F896DDC39405742E429B51006A3C /* Foundation.framework */,
+				329CDDB2D5D34E425741E5D860695207 /* MobileCoreServices.framework */,
+				EC8DEB821E97B02BD117ABA480AB77CC /* SystemConfiguration.framework */,
+				0BD557A2102BE8D905DBEEB3FF4A03DE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6D4D780ADA8ED3D56013C248074D536B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BBE59F71EE64BE220426CCCD69E1013 /* libPods-TTPlayerCache.a */,
+				8BDA97AFFFFB021D8A894B465F948AE8 /* libTTPlayerCache.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				9A4376A6B98C6182311F213CF8B65378 /* Pods */,
+				6D4D780ADA8ED3D56013C248074D536B /* Products */,
+				D1CC252DE2A84335011A6665BC7A1F0D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9A4376A6B98C6182311F213CF8B65378 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46B1A411CE4004994B079BE896809839 /* TTPlayerCache */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA6841E753FC5D0C12C091F446B35994 /* Pods-TTPlayerCache */ = {
+			isa = PBXGroup;
+			children = (
+				AF6098A9A0C1227A720DAD27BA66650B /* Pods-TTPlayerCache-acknowledgements.markdown */,
+				E275287D7E4CE744BD940E63F2D21B96 /* Pods-TTPlayerCache-acknowledgements.plist */,
+				0AD863BAFA47D52172788D04E19602A0 /* Pods-TTPlayerCache-dummy.m */,
+				A7F3215C3AB7D4F2F8D989397494B553 /* Pods-TTPlayerCache-frameworks.sh */,
+				1005349B033EA7C6B5B33443F8993AFF /* Pods-TTPlayerCache-resources.sh */,
+				4439D402346AA1E2D77D027A2B70B0C9 /* Pods-TTPlayerCache.debug.xcconfig */,
+				073D04C8F0310BF3EA58BD0423B4EE21 /* Pods-TTPlayerCache.release.xcconfig */,
+			);
+			name = "Pods-TTPlayerCache";
+			path = "Target Support Files/Pods-TTPlayerCache";
+			sourceTree = "<group>";
+		};
+		D1CC252DE2A84335011A6665BC7A1F0D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA6841E753FC5D0C12C091F446B35994 /* Pods-TTPlayerCache */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AF07EB54E2524D827B73FF34A4369E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BF893E3CD85CC6B3B3F2014F72B63C /* Reachability.h in Headers */,
+				8C65A32D886D628E54A73AD5B508F66E /* TTPlayerCache.h in Headers */,
+				A3B9AA54619F3402C003179B1D910549 /* TTReachabilityManager.h in Headers */,
+				2EA3E81DF6CDC87E09876C19072F40FA /* TTResourceLoaderCache.h in Headers */,
+				1E6FD65C1E6E807D82E1F9566ACAD549 /* TTResourceLoaderData.h in Headers */,
+				990DC2714DF5AF0FF72831763B0E4437 /* TTResourceLoaderDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		200AA24C31CA548C3310DA365FAD6FEA /* TTPlayerCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F51F839E029758D0CE2A997A77E0C2E /* Build configuration list for PBXNativeTarget "TTPlayerCache" */;
+			buildPhases = (
+				1597E2B45A6FFC9EC08D01BC593E90EB /* Sources */,
+				C55BF526EDD74A016DE500EA96D5E9A1 /* Frameworks */,
+				D2AF07EB54E2524D827B73FF34A4369E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTPlayerCache;
+			productName = TTPlayerCache;
+			productReference = 8BDA97AFFFFB021D8A894B465F948AE8 /* libTTPlayerCache.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AEB0636565799492B36C322AE3C84B4D /* Pods-TTPlayerCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC475A0DA11839C4A2CAE24BBD0FAD0D /* Build configuration list for PBXNativeTarget "Pods-TTPlayerCache" */;
+			buildPhases = (
+				58506830DB3136151D788AE1C8F12D86 /* Sources */,
+				BF70D4A1077AA5D4760D3C17E0BE98D1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F2C78B0EB29D27A0FD023E243F4F6E9 /* PBXTargetDependency */,
+			);
+			name = "Pods-TTPlayerCache";
+			productName = "Pods-TTPlayerCache";
+			productReference = 0BBE59F71EE64BE220426CCCD69E1013 /* libPods-TTPlayerCache.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6D4D780ADA8ED3D56013C248074D536B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEB0636565799492B36C322AE3C84B4D /* Pods-TTPlayerCache */,
+				200AA24C31CA548C3310DA365FAD6FEA /* TTPlayerCache */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1597E2B45A6FFC9EC08D01BC593E90EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9FA686BFE66EE8DBDB48B30BF04E87 /* Reachability.m in Sources */,
+				EE4964EC696E5730D242B7544A26470E /* TTPlayerCache-dummy.m in Sources */,
+				874F43928837E50DC80AA9DFFA12D63A /* TTReachabilityManager.m in Sources */,
+				58EC9EEA4EB4BD88E010AA3C06219F7D /* TTResourceLoaderCache.m in Sources */,
+				E459FB41E8C67CD36F71D5BAC7D7970A /* TTResourceLoaderData.m in Sources */,
+				B28BB0A57DDCBE27752CC6A1135CFC60 /* TTResourceLoaderDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58506830DB3136151D788AE1C8F12D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F059DC5EFA0C71F83BEC97DF0A563E9A /* Pods-TTPlayerCache-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F2C78B0EB29D27A0FD023E243F4F6E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TTPlayerCache;
+			target = 200AA24C31CA548C3310DA365FAD6FEA /* TTPlayerCache */;
+			targetProxy = 5D88164D0D870272C0455D6ACE634FAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		4E26375991ED6DCDE51A1D65C27EC8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 073D04C8F0310BF3EA58BD0423B4EE21 /* Pods-TTPlayerCache.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5AA93EC8509798E6A5E67943015C57C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC415D3D10AF09904EFFC41870539E8F /* TTPlayerCache.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TTPlayerCache/TTPlayerCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2F330E586E06E5C58D70CCF1DB20996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC415D3D10AF09904EFFC41870539E8F /* TTPlayerCache.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TTPlayerCache/TTPlayerCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECB7A493BE6A4333C72A8C47EFDEA776 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4439D402346AA1E2D77D027A2B70B0C9 /* Pods-TTPlayerCache.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
+				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F51F839E029758D0CE2A997A77E0C2E /* Build configuration list for PBXNativeTarget "TTPlayerCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2F330E586E06E5C58D70CCF1DB20996 /* Debug */,
+				5AA93EC8509798E6A5E67943015C57C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC475A0DA11839C4A2CAE24BBD0FAD0D /* Build configuration list for PBXNativeTarget "Pods-TTPlayerCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB7A493BE6A4333C72A8C47EFDEA776 /* Debug */,
+				4E26375991ED6DCDE51A1D65C27EC8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
