@@ -72,6 +72,9 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
     
     [self.player removeTimeObserver:self.timeObserve];
     
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_playerItem];
     [_playerItem removeObserver:self forKeyPath:@"status"];
     [_playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
@@ -131,10 +134,12 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
 }
 
 - (void)seekToTime:(NSTimeInterval)time {
-//    __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     self.seekTime = time;
     [self.player seekToTime:CMTimeMakeWithSeconds(self.seekTime, self.playerItem.currentTime.timescale) toleranceBefore:CMTimeMakeWithSeconds(1, 1) toleranceAfter:CMTimeMakeWithSeconds(1, 1) completionHandler:^(BOOL finished) {
-        
+        if (finished) {
+            [weakSelf play];
+        }
     }];
 }
 

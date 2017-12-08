@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+//    TTOpenLog = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

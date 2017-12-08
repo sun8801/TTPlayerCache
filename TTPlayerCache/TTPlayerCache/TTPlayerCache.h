@@ -30,12 +30,8 @@ extern NSString * const TTDownloadSpeed;
 extern NSString * const TTDownloadFinished;
 
 //打印加载日志
-static BOOL TTOpenLog = YES;
-
-#if TTOpenLog
-#define TTLog(...) NSLog(__VA_ARGS__)
-#else
-#define TTLog(...)
-#endif
+extern BOOL TTOpenLog; //YES打印， 默认NO
+#define TTLog(format, ...) \
+     if (TTOpenLog) fprintf(stderr, "%s", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);
 
 #endif /* TTPlayerCache_h */
