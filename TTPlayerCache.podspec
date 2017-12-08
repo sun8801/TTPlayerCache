@@ -2,14 +2,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "TTPlayerCache"
-  s.version      = "0.0.2"
+  s.version      = "0.1.0"
   s.summary      = "A cache for AVPlayer of TTPlayerCache."  
   s.homepage     = "https://github.com/sun8801/TTPlayerCache"
   s.license      = "MIT"
   s.author       = { "sun" => "sun8801@users.noreply.github.com" }
 
-  s.platform     = :ios, "7.0"
-  s.ios.deployment_target = "7.0"
+  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = "8.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
