@@ -8,7 +8,7 @@
 
 #import "TTResourceLoaderData.h"
 #import "TTPlayerCache.h"
-
+#import "AVAssetResourceLoadingDataRequest+TTCategory.m"
 #import <AVFoundation/AVAssetResourceLoader.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <UIKit/UIKit.h>
@@ -249,7 +249,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
 }
 
 /**
- 获取在 loadingRequest【requestRangeBegin < requestedOffset】 内的 requestsAllDataToEndOfResource == YES 的 TTTaskModel
+ 获取在 loadingRequest【requestRangeBegin < requestedOffset】 内的 TT_requestsAllDataToEndOfResource == YES 的 TTTaskModel
  
  @param loadingRequest <#loadingRequest description#>
  @param needEqual 用于判断是否需要requestoffset 与lastLoadingRequest.crrentOffset 相等
@@ -262,7 +262,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     __block TTTaskModel *taskModel = nil;
     [_taskModelDict enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, TTTaskModel * _Nonnull obj, BOOL * _Nonnull stop) {
         if ((obj.loadingRequest.dataRequest.
-            requestsAllDataToEndOfResource ||
+            TT_requestsAllDataToEndOfResource ||
              obj.requestRangeBegin == 0) &&
             (obj.dataTask.state == NSURLSessionTaskStateRunning || obj.dataTask.state == NSURLSessionTaskStateSuspended)
             ) {
@@ -333,7 +333,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
 - (void)cancelNoRequestsAllDataToEndOfResourceTask {
     [_taskModelDict enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, TTTaskModel * _Nonnull obj, BOOL * _Nonnull stop) {
         if (obj.loadingRequest.dataRequest.requestedOffset != 0 && obj.loadingRequest.dataRequest.
-            requestsAllDataToEndOfResource == NO) {
+            TT_requestsAllDataToEndOfResource == NO) {
             obj.isCanceled = YES;
             [obj.dataTask cancel];
         }
@@ -397,7 +397,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     }
     loadingRequest.response = dataTask.response;
     if (didRespondFinished) {
-        if (loadingRequest.dataRequest.requestsAllDataToEndOfResource) {
+        if (loadingRequest.dataRequest.TT_requestsAllDataToEndOfResource) {
             _cancel_finish_semaphore_t = dispatch_semaphore_create(0);
             //是否需要取消
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -411,7 +411,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
         [loadingRequest finishLoading];
         return;
     }
-    if (loadingRequest.dataRequest.requestsAllDataToEndOfResource) {
+    if (loadingRequest.dataRequest.TT_requestsAllDataToEndOfResource) {
         long long currentResponedEnd = taskModel.requestRangeBegin + dataTask.countOfBytesReceived;
         if ((loadingRequest.dataRequest.currentOffset - currentResponedEnd) >= TTNotNeedNetMaxIntervalBytes) {
             //当响应到重叠下载部分

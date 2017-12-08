@@ -84,9 +84,9 @@
 - (void)cancelLoadingRequestWithTaskId:(NSUInteger)taskIdentifier;
 
 /**
- 取消RequestsAllDataToEndOfResource == NO 的下载任务
+ 取消TT_requestsAllDataToEndOfResource == NO 的下载任务
  
- 当开始新的下载任务（requestsAllDataToEndOfResource == YES ）时调用，
+ 当开始新的下载任务（TT_requestsAllDataToEndOfResource == YES ）时调用，
  */
 - (void)cancelNoRequestsAllDataToEndOfResourceTask;
 

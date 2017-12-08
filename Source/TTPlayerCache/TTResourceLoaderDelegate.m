@@ -11,6 +11,7 @@
 #import "TTPlayerCache.h"
 #import "TTResourceLoaderData.h"
 #import "TTReachabilityManager.h"
+#import "AVAssetResourceLoadingDataRequest+TTCategory.h"
 #import <UIKit/UIKit.h>
 
 dispatch_queue_t TT_resourceLoader_delegate_queue(void) {
@@ -155,8 +156,21 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     }
     TTLog(@"\n\n ********************* 开始一次数据加载*********************\n");
     
-    //requestsAllDataToEndOfResource == NO 时新建请求，快进时会创建改loadingRequest
-    if (loadingRequest.dataRequest.requestsAllDataToEndOfResource == NO && loadingRequest.dataRequest.requestedOffset != 0) {
+    //TT_requestsAllDataToEndOfResource == NO 时新建请求，快进时会创建改loadingRequest
+
+    if (@available(iOS 9.0, *)) {//iOS 9.0 以上
+        loadingRequest.dataRequest.TT_requestsAllDataToEndOfResource = loadingRequest.dataRequest.requestsAllDataToEndOfResource;
+    }else {
+        AVAssetResourceLoadingDataRequest *dataRequest = loadingRequest.dataRequest;
+        long long r_length = dataRequest.requestedOffset + dataRequest.requestedLength;
+        if (_data.contentLength == r_length) {
+            dataRequest.TT_requestsAllDataToEndOfResource = YES;
+        }else {
+            dataRequest.TT_requestsAllDataToEndOfResource = NO;
+        }
+    }
+    
+    if (loadingRequest.dataRequest.TT_requestsAllDataToEndOfResource == NO && loadingRequest.dataRequest.requestedOffset != 0) {
         NSURLRequest *request = [self requestWithLoadingRequest:loadingRequest toEnd:NO];
         __block NSURLSessionDataTask *dataTask = nil;
         url_session_manager_create_task_safely(^{
@@ -164,6 +178,7 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
         });
         [_data addLoadingRequest:loadingRequest dataTask:dataTask];
         [dataTask resume];
+        TTLog(@"***TT_requestsAllDataToEndOfResource ==NO***-%@--",loadingRequest);
         return;
     }
     
@@ -189,7 +204,7 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
 
     [dataTask resume];
 
-    TTLog(@"\n\n*******网络请求-dataRequest:%@ \n",loadingRequest.dataRequest);
+    TTLog(@"\n\n*******网络请求-loadingRequest:%@ \n",loadingRequest);
 }
 
 - (void)reloadLoadingRequestWhenHasNetError {
@@ -211,14 +226,17 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     long long requestEnd     = requestOffset + requsedtLength - 1;
     
     NSMutableURLRequest *mutableURLRequest = [loadingRequest.request mutableCopy];
+    //设置缓存策略
+    mutableURLRequest.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    
     _url = [loadingRequest.request.URL.absoluteString stringByReplacingOccurrencesOfString:TTPlayerCustomProtocol withString:@""];
     mutableURLRequest.URL = [NSURL URLWithString:_url];
     
     ////计算组装 Range ///////////////////
     if (toEnd) {
-        [mutableURLRequest addValue:[NSString stringWithFormat:@"bytes=%lld-",requestOffset] forHTTPHeaderField:@"Range"];
+        [mutableURLRequest setValue:[NSString stringWithFormat:@"bytes=%lld-",requestOffset] forHTTPHeaderField:@"Range"];
     }else {
-        [mutableURLRequest addValue:[NSString stringWithFormat:@"bytes=%lld-%lld",requestOffset,requestEnd] forHTTPHeaderField:@"Range"];
+        [mutableURLRequest setValue:[NSString stringWithFormat:@"bytes=%lld-%lld",requestOffset,requestEnd] forHTTPHeaderField:@"Range"];
     }
     /////////////////////////////////////////////
     
@@ -285,28 +303,46 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     NSUInteger _dowloadTotal;
     NSUInteger _speed;
     CFAbsoluteTime _time;
+    NSNotificationCenter *_notificationCenter;
 }
+- (void)dealloc {
+    _notificationCenter = nil;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _notificationCenter = [NSNotificationCenter defaultCenter];
+    }
+    return self;
+}
+
 /** 计算下载速度 */
 - (void)caculateDownloadSpeed {
-
     CFAbsoluteTime currentTime = CFAbsoluteTimeGetCurrent();
     //计算一秒内的速度
     CFAbsoluteTime intervalTime = currentTime - _time; //间隔
     if (intervalTime >= 1) {
         _speed = _dowloadTotal/intervalTime;
-        NSString *speedString = [self transformBytesToString:_speed];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:TTVideoDownloadSpeedNotification object:nil userInfo:@{TTDownloadSpeed:speedString}];
-        });
+        NSString *speedString ;
+        if ([self respondsToSelector:@selector(transformBytesToString:)]) {
+            speedString = [self transformBytesToString:_speed];
+        }else {
+            speedString = @"0";
+        }
+        dispatch_block_t block = ^() {
+            [_notificationCenter postNotificationName:TTVideoDownloadSpeedNotification object:nil userInfo:@{TTDownloadSpeed:speedString}];
+        };
+        dispatch_async(dispatch_get_main_queue(), block);
         _dowloadTotal = 0;
         _time = currentTime;
     }
 }
 
 - (void)postDownloadFinishedNotification {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:TTVideoDownloadSpeedNotification object:nil userInfo:@{TTDownloadFinished:@(YES)}];
-    });
+    dispatch_block_t block = ^() {
+        [_notificationCenter postNotificationName:TTVideoDownloadSpeedNotification object:nil userInfo:@{TTDownloadFinished:@(YES)}];
+    };
+    dispatch_async(dispatch_get_main_queue(), block);
 }
 
 /** 转换速度成 B/s KB/s M/s */

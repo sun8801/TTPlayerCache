@@ -8,7 +8,7 @@
 
 #import "TTResourceLoaderCache.h"
 #import "TTPlayerCache.h"
-
+#import <objc/runtime.h>
 #import <CommonCrypto/CommonDigest.h>
 
 /** 缓存本地存储目录名 */
@@ -55,7 +55,7 @@ NSString * const TTPlayerCustomProtocol = @"MMTT://";
 NSString * const TTVideoDownloadSpeedNotification = @"TTVideoDownloadSpeedNotification";
 NSString * const TTDownloadSpeed = @"TTDownloadSpeed";
 NSString * const TTDownloadFinished = @"TTDownloadFinished";
-
+BOOL TTOpenLog = NO;
 
 /** 把正常URL 转换成 当前代理识别URL 即在url前加上MMTT://  */
 NSString *TTResourceUrlFromOrigianllUrl(NSString * originalUrl) {

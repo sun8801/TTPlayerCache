@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D28EDCA1FC4193B00753C84 /* TTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28EDC91FC4193B00753C84 /* TTReachabilityManager.m */; };
-		7D32E4AD1FD12F7700193ED2 /* TTResourceLoaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32E4AC1FD12F7700193ED2 /* TTResourceLoaderCache.m */; };
-		7D8E077C1FBADED800F17F96 /* TTResourceLoaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E077B1FBADED800F17F96 /* TTResourceLoaderData.m */; };
+		7D71BE331FDA84FC003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE251FDA84FB003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.m */; };
+		7D71BE341FDA84FC003069B3 /* TTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE281FDA84FB003069B3 /* TTReachabilityManager.m */; };
+		7D71BE351FDA84FC003069B3 /* TTResourceLoaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE291FDA84FB003069B3 /* TTResourceLoaderCache.m */; };
+		7D71BE361FDA84FC003069B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE2C1FDA84FB003069B3 /* Reachability.m */; };
+		7D71BE371FDA84FC003069B3 /* TTResourceLoaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE311FDA84FB003069B3 /* TTResourceLoaderData.m */; };
+		7D71BE381FDA84FC003069B3 /* TTResourceLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71BE321FDA84FB003069B3 /* TTResourceLoaderDelegate.m */; };
 		7DCA9F6A1FD643EF00644A65 /* TTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9F691FD643EE00644A65 /* TTPlayerView.m */; };
-		7DCA9F6D1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9F6C1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.m */; };
-		7DD38CBD1FC417CD00FBF311 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD38CBB1FC417CD00FBF311 /* Reachability.m */; };
 		7DE434391FCD356900D8085F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE434381FCD356900D8085F /* MainViewController.m */; };
 		7DE8E1C91FB3FBA0002E7BA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8E1C81FB3FBA0002E7BA6 /* AppDelegate.m */; };
 		7DE8E1CC1FB3FBA0002E7BA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8E1CB1FB3FBA0002E7BA6 /* ViewController.m */; };
@@ -20,22 +21,24 @@
 		7DE8E1D11FB3FBA0002E7BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE8E1D01FB3FBA0002E7BA6 /* Assets.xcassets */; };
 		7DE8E1D41FB3FBA0002E7BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE8E1D21FB3FBA0002E7BA6 /* LaunchScreen.storyboard */; };
 		7DE8E1D71FB3FBA0002E7BA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8E1D61FB3FBA0002E7BA6 /* main.m */; };
-		7DE8E1E61FB4080A002E7BA6 /* TTResourceLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8E1E51FB4080A002E7BA6 /* TTResourceLoaderDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D28EDC81FC4193B00753C84 /* TTReachabilityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTReachabilityManager.h; sourceTree = "<group>"; };
-		7D28EDC91FC4193B00753C84 /* TTReachabilityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTReachabilityManager.m; sourceTree = "<group>"; };
-		7D32E4AB1FD12F7700193ED2 /* TTResourceLoaderCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderCache.h; sourceTree = "<group>"; };
-		7D32E4AC1FD12F7700193ED2 /* TTResourceLoaderCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderCache.m; sourceTree = "<group>"; };
-		7D8E077A1FBADED800F17F96 /* TTResourceLoaderData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderData.h; sourceTree = "<group>"; };
-		7D8E077B1FBADED800F17F96 /* TTResourceLoaderData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderData.m; sourceTree = "<group>"; };
+		7D71BE251FDA84FB003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAssetResourceLoadingDataRequest+TTCategory.m"; sourceTree = "<group>"; };
+		7D71BE261FDA84FB003069B3 /* TTResourceLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderDelegate.h; sourceTree = "<group>"; };
+		7D71BE271FDA84FB003069B3 /* TTResourceLoaderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderData.h; sourceTree = "<group>"; };
+		7D71BE281FDA84FB003069B3 /* TTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReachabilityManager.m; sourceTree = "<group>"; };
+		7D71BE291FDA84FB003069B3 /* TTResourceLoaderCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderCache.m; sourceTree = "<group>"; };
+		7D71BE2A1FDA84FB003069B3 /* TTPlayerCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerCache.h; sourceTree = "<group>"; };
+		7D71BE2C1FDA84FB003069B3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7D71BE2D1FDA84FB003069B3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7D71BE2E1FDA84FB003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAssetResourceLoadingDataRequest+TTCategory.h"; sourceTree = "<group>"; };
+		7D71BE2F1FDA84FB003069B3 /* TTResourceLoaderCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderCache.h; sourceTree = "<group>"; };
+		7D71BE301FDA84FB003069B3 /* TTReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReachabilityManager.h; sourceTree = "<group>"; };
+		7D71BE311FDA84FB003069B3 /* TTResourceLoaderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderData.m; sourceTree = "<group>"; };
+		7D71BE321FDA84FB003069B3 /* TTResourceLoaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderDelegate.m; sourceTree = "<group>"; };
 		7DCA9F681FD643EE00644A65 /* TTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerView.h; sourceTree = "<group>"; };
 		7DCA9F691FD643EE00644A65 /* TTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerView.m; sourceTree = "<group>"; };
-		7DCA9F6B1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVAssetResourceLoadingDataRequest+TTCategory.h"; sourceTree = "<group>"; };
-		7DCA9F6C1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AVAssetResourceLoadingDataRequest+TTCategory.m"; sourceTree = "<group>"; };
-		7DD38CBB1FC417CD00FBF311 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		7DD38CBC1FC417CD00FBF311 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7DE434371FCD356900D8085F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7DE434381FCD356900D8085F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7DE8E1C41FB3FBA0002E7BA6 /* TTPlayerCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlayerCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,9 +51,6 @@
 		7DE8E1D31FB3FBA0002E7BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DE8E1D51FB3FBA0002E7BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DE8E1D61FB3FBA0002E7BA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7DE8E1E41FB4080A002E7BA6 /* TTResourceLoaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTResourceLoaderDelegate.h; sourceTree = "<group>"; };
-		7DE8E1E51FB4080A002E7BA6 /* TTResourceLoaderDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTResourceLoaderDelegate.m; sourceTree = "<group>"; };
-		7DE8E1E71FB42A17002E7BA6 /* TTPlayerCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTPlayerCache.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D71BE231FDA84FB003069B3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7D71BE241FDA84FB003069B3 /* TTPlayerCache */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		7D71BE241FDA84FB003069B3 /* TTPlayerCache */ = {
+			isa = PBXGroup;
+			children = (
+				7D71BE2B1FDA84FB003069B3 /* Reachability2.0 */,
+				7D71BE251FDA84FB003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.m */,
+				7D71BE2E1FDA84FB003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.h */,
+				7D71BE261FDA84FB003069B3 /* TTResourceLoaderDelegate.h */,
+				7D71BE321FDA84FB003069B3 /* TTResourceLoaderDelegate.m */,
+				7D71BE271FDA84FB003069B3 /* TTResourceLoaderData.h */,
+				7D71BE281FDA84FB003069B3 /* TTReachabilityManager.m */,
+				7D71BE291FDA84FB003069B3 /* TTResourceLoaderCache.m */,
+				7D71BE2F1FDA84FB003069B3 /* TTResourceLoaderCache.h */,
+				7D71BE301FDA84FB003069B3 /* TTReachabilityManager.h */,
+				7D71BE311FDA84FB003069B3 /* TTResourceLoaderData.m */,
+				7D71BE2A1FDA84FB003069B3 /* TTPlayerCache.h */,
+			);
+			path = TTPlayerCache;
+			sourceTree = "<group>";
+		};
+		7D71BE2B1FDA84FB003069B3 /* Reachability2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				7D71BE2C1FDA84FB003069B3 /* Reachability.m */,
+				7D71BE2D1FDA84FB003069B3 /* Reachability.h */,
+			);
+			path = Reachability2.0;
+			sourceTree = "<group>";
+		};
 		7DCA9F671FD643EE00644A65 /* TTPlayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,15 +114,6 @@
 				7DCA9F691FD643EE00644A65 /* TTPlayerView.m */,
 			);
 			path = TTPlayerView;
-			sourceTree = "<group>";
-		};
-		7DD38CBA1FC417CD00FBF311 /* Reachability2.0 */ = {
-			isa = PBXGroup;
-			children = (
-				7DD38CBB1FC417CD00FBF311 /* Reachability.m */,
-				7DD38CBC1FC417CD00FBF311 /* Reachability.h */,
-			);
-			path = Reachability2.0;
 			sourceTree = "<group>";
 		};
 		7DE8E1BB1FB3FB9F002E7BA6 = {
@@ -110,8 +137,8 @@
 		7DE8E1C61FB3FBA0002E7BA6 /* TTPlayerCache */ = {
 			isa = PBXGroup;
 			children = (
+				7D71BE231FDA84FB003069B3 /* Source */,
 				7DCA9F671FD643EE00644A65 /* TTPlayerView */,
-				7DE8E1DD1FB3FBDA002E7BA6 /* TTPlayerCache */,
 				7DE8E1C71FB3FBA0002E7BA6 /* AppDelegate.h */,
 				7DE8E1C81FB3FBA0002E7BA6 /* AppDelegate.m */,
 				7DE434371FCD356900D8085F /* MainViewController.h */,
@@ -123,25 +150,6 @@
 				7DE8E1D21FB3FBA0002E7BA6 /* LaunchScreen.storyboard */,
 				7DE8E1D51FB3FBA0002E7BA6 /* Info.plist */,
 				7DE8E1D61FB3FBA0002E7BA6 /* main.m */,
-			);
-			path = TTPlayerCache;
-			sourceTree = "<group>";
-		};
-		7DE8E1DD1FB3FBDA002E7BA6 /* TTPlayerCache */ = {
-			isa = PBXGroup;
-			children = (
-				7DD38CBA1FC417CD00FBF311 /* Reachability2.0 */,
-				7DE8E1E41FB4080A002E7BA6 /* TTResourceLoaderDelegate.h */,
-				7DE8E1E51FB4080A002E7BA6 /* TTResourceLoaderDelegate.m */,
-				7D8E077A1FBADED800F17F96 /* TTResourceLoaderData.h */,
-				7D8E077B1FBADED800F17F96 /* TTResourceLoaderData.m */,
-				7D28EDC81FC4193B00753C84 /* TTReachabilityManager.h */,
-				7D28EDC91FC4193B00753C84 /* TTReachabilityManager.m */,
-				7D32E4AB1FD12F7700193ED2 /* TTResourceLoaderCache.h */,
-				7D32E4AC1FD12F7700193ED2 /* TTResourceLoaderCache.m */,
-				7DCA9F6B1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.h */,
-				7DCA9F6C1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.m */,
-				7DE8E1E71FB42A17002E7BA6 /* TTPlayerCache.h */,
 			);
 			path = TTPlayerCache;
 			sourceTree = "<group>";
@@ -224,16 +232,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DE8E1E61FB4080A002E7BA6 /* TTResourceLoaderDelegate.m in Sources */,
-				7D32E4AD1FD12F7700193ED2 /* TTResourceLoaderCache.m in Sources */,
+				7D71BE331FDA84FC003069B3 /* AVAssetResourceLoadingDataRequest+TTCategory.m in Sources */,
 				7DE8E1CC1FB3FBA0002E7BA6 /* ViewController.m in Sources */,
+				7D71BE371FDA84FC003069B3 /* TTResourceLoaderData.m in Sources */,
 				7DE8E1D71FB3FBA0002E7BA6 /* main.m in Sources */,
-				7DD38CBD1FC417CD00FBF311 /* Reachability.m in Sources */,
 				7DE434391FCD356900D8085F /* MainViewController.m in Sources */,
-				7D8E077C1FBADED800F17F96 /* TTResourceLoaderData.m in Sources */,
-				7D28EDCA1FC4193B00753C84 /* TTReachabilityManager.m in Sources */,
-				7DCA9F6D1FD6993000644A65 /* AVAssetResourceLoadingDataRequest+TTCategory.m in Sources */,
 				7DE8E1C91FB3FBA0002E7BA6 /* AppDelegate.m in Sources */,
+				7D71BE351FDA84FC003069B3 /* TTResourceLoaderCache.m in Sources */,
+				7D71BE341FDA84FC003069B3 /* TTReachabilityManager.m in Sources */,
+				7D71BE361FDA84FC003069B3 /* Reachability.m in Sources */,
+				7D71BE381FDA84FC003069B3 /* TTResourceLoaderDelegate.m in Sources */,
 				7DCA9F6A1FD643EF00644A65 /* TTPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
