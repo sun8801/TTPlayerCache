@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "TTPlayerCache.h"
+#import "TTPlayerCacheMacro.h"
 #import "TTResourceLoaderDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 

@@ -7,8 +7,7 @@
 //
 
 #import "TTResourceLoaderCache.h"
-#import "TTPlayerCache.h"
-#import <objc/runtime.h>
+#import "TTPlayerCacheMacro.h"
 #import <CommonCrypto/CommonDigest.h>
 
 /** 缓存本地存储目录名 */
@@ -85,7 +84,7 @@ NSString *TTResourceUrlFromOrigianllUrl(NSString * originalUrl) {
 + (NSUInteger) fileSizeAtPath:(NSString*) filePath{
     NSFileManager* manager = [NSFileManager defaultManager];
     if ([manager fileExistsAtPath:filePath]){
-        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+        return (NSUInteger)[[manager attributesOfItemAtPath:filePath error:nil] fileSize];
     }
     return 0;
 }

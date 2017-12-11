@@ -8,7 +8,7 @@
 
 #import "TTResourceLoaderDelegate.h"
 
-#import "TTPlayerCache.h"
+#import "TTPlayerCacheMacro.h"
 #import "TTResourceLoaderData.h"
 #import "TTReachabilityManager.h"
 #import "AVAssetResourceLoadingDataRequest+TTCategory.h"
@@ -351,11 +351,11 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     static NSUInteger cell_M = 1 << 20;//1024 *1024
     NSString *speedString = nil;
     if (speed < cell_KB) {
-        speedString = [NSString stringWithFormat:@"%ldB/s",speed];
+        speedString = [NSString stringWithFormat:@"%ludB/s",(unsigned long)speed];
     }else if (speed < cell_M) {
-        speedString = [NSString stringWithFormat:@"%ldKB/s",(speed/cell_KB)];
+        speedString = [NSString stringWithFormat:@"%ludKB/s",(unsigned long)(speed/cell_KB)];
     }else {
-        speedString = [NSString stringWithFormat:@"%ldM/s",(speed/cell_M)];
+        speedString = [NSString stringWithFormat:@"%ludM/s",(unsigned long)(speed/cell_M)];
     }
     return speedString;
 }

@@ -7,8 +7,8 @@
 //
 
 #import "TTResourceLoaderData.h"
-#import "TTPlayerCache.h"
-#import "AVAssetResourceLoadingDataRequest+TTCategory.m"
+#import "TTPlayerCacheMacro.h"
+#import "AVAssetResourceLoadingDataRequest+TTCategory.h"
 #import <AVFoundation/AVAssetResourceLoader.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <UIKit/UIKit.h>
@@ -132,7 +132,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     }
     _contentLength = contentLength;
     _MIMEType      = MIMEType;
-    _data          = [NSMutableData dataWithLength:contentLength];
+    _data          = [NSMutableData dataWithLength:(NSUInteger)contentLength];
     _hasConfigured = YES;
     TTLog(@"****视频内存长度%lld MIMETyep:%@",contentLength,MIMEType);
     TTLog(@"****视频大小%.2fM",contentLength/1024.0/1024.0);
@@ -381,7 +381,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
         CFArrayAppendValue(_receivedDataPointArray, dataPoint);
     }
     
-    NSRange replaceRange = NSMakeRange(startOffset, end -startOffset +1);
+    NSRange replaceRange = NSMakeRange((NSUInteger)startOffset, (NSUInteger)(end -startOffset +1));
     if (replaceRange.length > 0) {
         [_data replaceBytesInRange:replaceRange withBytes:data.bytes length:replaceRange.length];
     }
@@ -678,7 +678,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     if (needResponseDataLength <= 0) {
         return NO;
     }
-    NSData *respondData = [_data subdataWithRange:NSMakeRange(startOffset, needResponseDataLength)];
+    NSData *respondData = [_data subdataWithRange:NSMakeRange((NSUInteger)startOffset, (NSUInteger)needResponseDataLength)];
     [loadingRequest.dataRequest respondWithData:respondData];
     //    TTLog(@"填充数据长度%ld",respondData.length);
     respondData = nil;

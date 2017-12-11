@@ -7,11 +7,11 @@
 //
 
 #import "TTReachabilityManager.h"
-#import "Reachability.h"
+#import "TTReachability.h"
 
 @implementation TTReachabilityManager
 {
-    Reachability *_reachability;
+    TTReachability *_reachability;
 }
 
 static TTReachabilityManager *_instance = nil;
@@ -31,11 +31,11 @@ static TTReachabilityManager *_instance = nil;
 }
 
 - (void)setupReachability {
-    _reachability = [Reachability reachabilityForInternetConnection];
+    _reachability = [TTReachability reachabilityForInternetConnection];
     [_reachability startNotifier];
     
     __weak typeof(self) weakSelf = self;
-    _reachability.reachabilityBlock = ^(Reachability *reachability, SCNetworkConnectionFlags flags) {
+    _reachability.reachabilityBlock = ^(TTReachability *reachability, SCNetworkConnectionFlags flags) {
         if (weakSelf.reachableStatusChanged) {
             weakSelf.reachableStatusChanged(reachability.isReachable);
         }

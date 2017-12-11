@@ -8,7 +8,7 @@
 
 #import "TTPlayerView.h"
 #import "TTResourceLoaderDelegate.h"
-#import "TTPlayerCache.h"
+#import "TTPlayerCacheMacro.h"
 #import <AVFoundation/AVFoundation.h>
 
 NSString *TTFilmLengthTransformToTimeString(id filmLength) {

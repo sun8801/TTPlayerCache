@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import "TTPlayerCache.h"
-#import "TTResourceLoaderCache.h"
 
 @interface MainViewController ()<UITableViewDataSource, UITableViewDelegate>
 {

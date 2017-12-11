@@ -43,27 +43,27 @@ FOUNDATION_EXPORT const unsigned char ReachabilityVersionString[];
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
-extern NSString *const kReachabilityChangedNotification;
+extern NSString *const kTTReachabilityChangedNotification;
 
-typedef NS_ENUM(NSInteger, NetworkStatus) {
+typedef NS_ENUM(NSInteger, TTNetworkStatus) {
     // Apple NetworkStatus Compatible Names.
-    NotReachable = 0,
-    ReachableViaWiFi = 2,
-    ReachableViaWWAN = 1
+    TTNotReachable = 0,
+    TTReachableViaWiFi = 2,
+    TTReachableViaWWAN = 1
 };
 
-@class Reachability;
+@class TTReachability;
 
-typedef void (^NetworkReachable)(Reachability * reachability);
-typedef void (^NetworkUnreachable)(Reachability * reachability);
-typedef void (^NetworkReachability)(Reachability * reachability, SCNetworkConnectionFlags flags);
+typedef void (^TTNetworkReachable)(TTReachability * reachability);
+typedef void (^TTNetworkUnreachable)(TTReachability * reachability);
+typedef void (^TTNetworkReachability)(TTReachability * reachability, SCNetworkConnectionFlags flags);
 
 
-@interface Reachability : NSObject
+@interface TTReachability : NSObject
 
-@property (nonatomic, copy) NetworkReachable    reachableBlock;
-@property (nonatomic, copy) NetworkUnreachable  unreachableBlock;
-@property (nonatomic, copy) NetworkReachability reachabilityBlock;
+@property (nonatomic, copy) TTNetworkReachable    reachableBlock;
+@property (nonatomic, copy) TTNetworkUnreachable  unreachableBlock;
+@property (nonatomic, copy) TTNetworkReachability reachabilityBlock;
 
 @property (nonatomic, assign) BOOL reachableOnWWAN;
 
@@ -94,7 +94,7 @@ typedef void (^NetworkReachability)(Reachability * reachability, SCNetworkConnec
 // Is user intervention required?
 -(BOOL)isInterventionRequired;
 
--(NetworkStatus)currentReachabilityStatus;
+-(TTNetworkStatus)currentReachabilityStatus;
 -(SCNetworkReachabilityFlags)reachabilityFlags;
 -(NSString*)currentReachabilityString;
 -(NSString*)currentReachabilityFlags;
