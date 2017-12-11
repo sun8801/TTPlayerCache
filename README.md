@@ -3,7 +3,7 @@ AVPlayer 视频离线缓存、可以边下边播放、部分缓存、断网处�
 
 # [简书地址](http://www.jianshu.com/p/7fe8bce3d76)
 
-# COCOSPOD
+# CocoaPods
   > pod  'TTPlayerCache'
   
  ### 用法:
