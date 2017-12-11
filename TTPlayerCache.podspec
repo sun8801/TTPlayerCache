@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks   = "UIKit","AVFoundation","SystemConfiguration","MobileCoreServices"
 
-s.source_files        = 'Source/TTPlayerCache/TTPlayerCache{,Macro}.h'
-  s.public_header_files = 'source/TTPlayerCache/TTPlayerCache{,Macro}.h'
+  s.source_files        = 'Source/TTPlayerCache/TTPlayerCache.h'
+  s.public_header_files = 'source/TTPlayerCache/TTPlayerCache.h'
 
 
   s.subspec 'Reachability' do |ss|
@@ -42,8 +42,8 @@ s.source_files        = 'Source/TTPlayerCache/TTPlayerCache{,Macro}.h'
     ss.dependency 'TTPlayerCache/Category'
     ss.dependency 'TTPlayerCache/Reachability'
 
-    ss.source_files        = 'Source/TTPlayerCache/TTResourceLoader{Delegate,Data,Cache}.{h,m}'
-    ss.public_header_files = 'Source/TTPlayerCache/TTResourceLoader{Delegate,Data,Cache}.h'
+    ss.source_files        = 'Source/TTPlayerCache/TTPlayerCacheMacro.h', 'Source/TTPlayerCache/TTResourceLoader{Delegate,Data,Cache}.{h,m}'
+    ss.public_header_files = 'Source/TTPlayerCache/TTPlayerCacheMacro.h', 'Source/TTPlayerCache/TTResourceLoader{Delegate,Data,Cache}.h'
   end
 
 end
