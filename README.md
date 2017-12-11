@@ -10,7 +10,7 @@ AVPlayer 视频离线缓存、可以边下边播放、部分缓存、断网处�
 ```
 #import <TTPlayerCache.h>
 ...
-//把视频播放地址转成系统不能不识别的URL
+//把视频播放地址转成系统不能识别的URL
 NSString *videoUrl = @"http://....";
 videoUrl = TTResourceUrlFromOrigianllUrl(videoUrl);
 ...
