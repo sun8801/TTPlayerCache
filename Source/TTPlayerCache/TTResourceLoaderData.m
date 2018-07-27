@@ -291,16 +291,18 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     if (error) {
         if (error.code == NSURLErrorCancelled) {
             TTLog(@"*******Cancelled request**********");
-        }else if(error.code == NSURLErrorTimedOut) {
-            TTTaskModel *taskModel = _taskModelDict[@(taskIdentifier)];
-            TTLog(@"****请求error:%@",error);
-            [taskModel.loadingRequest finishLoadingWithError:error];
-        }else {
+        }else if(error.code == NSURLErrorNotConnectedToInternet && _downAllBytes > 1) {
             TTLog(@"\n*******网络错误%@*************\n",error);
-            //#error 判断下载失败后的反馈。。。。保存数据问题
+            //网络问题的话，网络自动连接后会重新下载，所以不finishLoadingWithError
+            //如果数据没有，finish
             [self removeTask:_errorTaskIdentifier];
             _errorTaskIdentifier = taskIdentifier;
             return;
+        }else {
+            TTLog(@"****请求error:%@",error);
+            TTTaskModel *taskModel = _taskModelDict[@(taskIdentifier)];
+            taskModel.loadingRequest.response = taskModel.dataTask.response;
+            [taskModel.loadingRequest finishLoadingWithError:error];
         }
     }else {
         TTLog(@"*********网络请求完成--succeed-**********");
@@ -453,9 +455,9 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     
     TTLog(@"*****存储视频到->>%@",_localFilePath);
     
-    NSData *writeData = _data;
-    NSString *localFilePath = _localFilePath;
-    NSString *localMediaInfoPath = _localMediaInfoPath;
+    NSData *writeData = [_data copy];
+    NSString *localFilePath = [_localFilePath copy];
+    NSString *localMediaInfoPath = [_localMediaInfoPath copy];
     
     NSDictionary *meidaInfoDict =
     @{
@@ -466,8 +468,8 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     
     void (^callBlock)(void) = ^{
         [[NSFileManager defaultManager] removeItemAtPath:localMediaInfoPath error:nil];
-        if (![[NSFileManager defaultManager] fileExistsAtPath:_localFilePath]) {
-            [[NSFileManager defaultManager] createFileAtPath:_localFilePath contents:nil attributes:nil];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:localFilePath]) {
+            [[NSFileManager defaultManager] createFileAtPath:localFilePath contents:nil attributes:nil];
         }
         NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:localFilePath];
         [fileHandle seekToFileOffset:0];
@@ -477,9 +479,7 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
     };
     
     if ([NSThread isMainThread]) {
-        dispatch_sync(dispatch_get_global_queue(0, 0), ^{
-            callBlock();
-        });
+        dispatch_async(dispatch_get_global_queue(0, 0), callBlock);
     }else {
         callBlock();
     }

@@ -243,7 +243,7 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     return mutableURLRequest;
 }
 
-#pragma mark -下载到数据
+#pragma mark -下载数据
 - (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response {
     [self showNetworkActivityIndicator];
     dispatch_sync(TT_resourceLoader_deal_queue(), ^{
@@ -252,10 +252,12 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
         }
     });
 }
+
 - (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     [_data appendData:data taskId:dataTask.taskIdentifier];
 }
-- (void)TT_downloadTaskTask:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+
+- (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)task didCompleteWithError:(NSError *)error {
     [_data taskCompleteWithError:error taskId:task.taskIdentifier];
     if (error && error.code == NSURLErrorCancelled && _cancel_semaphore_t && self.dataTask == task) {
         dispatch_semaphore_signal(_cancel_semaphore_t);
@@ -338,9 +340,12 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     }
 }
 
-- (void)postDownloadFinishedNotification {
+- (void)postDownloadFinishedNotificationWithError:(NSError *)error {
     dispatch_block_t block = ^() {
         [_notificationCenter postNotificationName:TTVideoDownloadSpeedNotification object:nil userInfo:@{TTDownloadFinished:@(YES)}];
+        if (error && error.code != NSURLErrorCancelled) {
+            [_notificationCenter postNotificationName:TTVideoDownloadFailNotification object:nil userInfo:@{TTDownloadError:error}];
+        }
     };
     dispatch_async(dispatch_get_main_queue(), block);
 }
@@ -351,11 +356,11 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     static NSUInteger cell_M = 1 << 20;//1024 *1024
     NSString *speedString = nil;
     if (speed < cell_KB) {
-        speedString = [NSString stringWithFormat:@"%ludB/s",(unsigned long)speed];
+        speedString = [NSString stringWithFormat:@"%luB/s",(unsigned long)speed];
     }else if (speed < cell_M) {
-        speedString = [NSString stringWithFormat:@"%ludKB/s",(unsigned long)(speed/cell_KB)];
+        speedString = [NSString stringWithFormat:@"%luKB/s",(unsigned long)(speed/cell_KB)];
     }else {
-        speedString = [NSString stringWithFormat:@"%ludM/s",(unsigned long)(speed/cell_M)];
+        speedString = [NSString stringWithFormat:@"%luM/s",(unsigned long)(speed/cell_M)];
     }
     return speedString;
 }
@@ -374,8 +379,8 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(nullable NSError *)error {
-    [_downloadDelegate TT_downloadTaskTask:task didCompleteWithError:error];
-    [self postDownloadFinishedNotification];
+    [_downloadDelegate TT_downloadTaskDataTask:(NSURLSessionDataTask *)task didCompleteWithError:error];
+    [self postDownloadFinishedNotificationWithError:error];
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask

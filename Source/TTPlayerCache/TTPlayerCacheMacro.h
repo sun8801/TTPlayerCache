@@ -26,12 +26,20 @@ extern NSString *TTLocalMediaInfoPath(NSString *url);
 
 /** 获得视频下载速度 通知 */
 extern NSString * const TTVideoDownloadSpeedNotification;
+/** 下载视频资源失败  */
+extern NSString * const TTVideoDownloadFailNotification;
+
+//TTVideoDownloadSpeedNotification info
 extern NSString * const TTDownloadSpeed;
 extern NSString * const TTDownloadFinished;
+extern NSString * const TTDownloadError;
 
 //打印加载日志
 extern BOOL TTOpenLog; //YES打印， 默认NO
 #define TTLog(format, ...) \
-     if (TTOpenLog) fprintf(stderr, "%s", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);
+if (TTOpenLog) { \
+    NSString *fileName = [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] stringByReplacingOccurrencesOfString:@".m" withString:@""];\
+    fprintf(stderr, "\n>>%s:\n%s\n", [fileName UTF8String] , [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);\
+}
 
 #endif /* TTPlayerCache_h */

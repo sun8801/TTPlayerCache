@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZfM-Qi-gh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZfM-Qi-gh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-cI-v30">
-                                <rect key="frame" x="82.5" y="449" width="210" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-cI-v30">
+                                <rect key="frame" x="82.5" y="512" width="210" height="75"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.41176470590000003" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="7H6-OG-CDF"/>
@@ -46,9 +46,10 @@
                                 </constraints>
                                 <state key="normal" title="选择播放地址"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y31-JZ-6Mt">
-                                <rect key="frame" x="50" y="114" width="275" height="327"/>
-                                <color key="backgroundColor" red="0.0" green="0.73333333329999995" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y31-JZ-6Mt">
+                                <rect key="frame" x="50" y="114" width="275" height="393"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="gNy-9G-tRS" id="11u-ws-cZV"/>
@@ -86,12 +87,12 @@
                             <constraint firstItem="9dL-jW-inr" firstAttribute="centerY" secondItem="3xk-kM-bJr" secondAttribute="centerY" id="AmG-h7-6Ji"/>
                             <constraint firstItem="9dL-jW-inr" firstAttribute="leading" secondItem="3xk-kM-bJr" secondAttribute="trailing" constant="20" id="CFA-ro-BgK"/>
                             <constraint firstItem="Y31-JZ-6Mt" firstAttribute="top" secondItem="3xk-kM-bJr" secondAttribute="bottom" constant="5" id="FMq-1A-Mh1"/>
-                            <constraint firstItem="QUs-cI-v30" firstAttribute="centerY" secondItem="mJe-Rb-OE3" secondAttribute="centerY" constant="150" id="Ncu-uj-dl0"/>
                             <constraint firstItem="QUs-cI-v30" firstAttribute="centerX" secondItem="mJe-Rb-OE3" secondAttribute="centerX" id="Y1w-wT-Cka"/>
                             <constraint firstItem="Y31-JZ-6Mt" firstAttribute="leading" secondItem="mJe-Rb-OE3" secondAttribute="leading" constant="50" id="Y46-8h-9fd"/>
                             <constraint firstItem="QUs-cI-v30" firstAttribute="top" secondItem="Y31-JZ-6Mt" secondAttribute="bottom" constant="5" id="bJY-Go-Vfk"/>
                             <constraint firstItem="3xk-kM-bJr" firstAttribute="leading" secondItem="mJe-Rb-OE3" secondAttribute="leading" constant="15" id="j51-4Q-CMc"/>
                             <constraint firstItem="DXK-W1-Mn6" firstAttribute="leading" secondItem="9dL-jW-inr" secondAttribute="trailing" constant="10" id="twu-Sk-yiG"/>
+                            <constraint firstItem="eKd-Od-wGx" firstAttribute="top" secondItem="QUs-cI-v30" secondAttribute="bottom" constant="80" id="vIs-n4-bX2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="主页" id="Aj9-w3-EPr"/>

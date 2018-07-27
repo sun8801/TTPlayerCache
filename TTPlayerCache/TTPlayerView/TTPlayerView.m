@@ -91,8 +91,9 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
+        TTOpenLog = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadSpeedChanged:) name:TTVideoDownloadSpeedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadFail:) name:TTVideoDownloadFailNotification object:nil];
     }
     return self;
 }
@@ -193,7 +194,7 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
     
     self.progressView.frame = CGRectMake(20, height -15, width -20 *2, 15);
     self.timeLengthLabel.frame = CGRectMake((width -150)/2.0, CGRectGetMinY(self.progressView.frame)-30, 150, 25);
-    self.downloadSpeedLabel.frame = CGRectMake(width -60, 0, 60, 30);
+    self.downloadSpeedLabel.frame = CGRectMake(width -100 -10, 0, 100, 30);
 }
 
 
@@ -213,7 +214,7 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
                 NSLog(@"视频可以播放了。。。。");
                 [self setPlayerTimeLabel];
             }
-            NSLog(@"当前视频状态：%ld",self.player.currentItem.status);
+            NSLog(@"当前视频状态：%ld",(long)self.player.currentItem.status);
         } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
             
             // 计算缓冲进度
@@ -250,7 +251,8 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
     NSLog(@"播放结束");
 }
 
-#pragma mark -下载速度改变。。。
+#pragma mark - NSNotification
+#pragma mark - 下载速度改变。。。
 - (void)downloadSpeedChanged:(NSNotification *)noti {
     BOOL hidden = [noti.userInfo[TTDownloadFinished] boolValue];
     if (hidden) {
@@ -261,6 +263,14 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
         NSString *speedString = noti.userInfo[TTDownloadSpeed];
         self.downloadSpeedLabel.text = speedString;
     }
+}
+
+- (void)downloadFail:(NSNotification *)noti {
+    NSError *error = noti.userInfo[TTDownloadError];
+    if (error) {
+        [[[UIAlertView alloc] initWithTitle:@"提示" message:error.localizedDescription delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show];
+    }
+    
 }
 
 - (void)hiddenDownloadSpeedLabel {
@@ -340,7 +350,9 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
         _downloadSpeedLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
         _downloadSpeedLabel.textColor = [UIColor whiteColor];
         _downloadSpeedLabel.font = [UIFont systemFontOfSize:13];
-        _downloadSpeedLabel.textAlignment = NSTextAlignmentCenter;
+        _downloadSpeedLabel.textAlignment = NSTextAlignmentRight;
+        _downloadSpeedLabel.minimumScaleFactor = 0.5;
+        _downloadSpeedLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_downloadSpeedLabel];
     }
     return _downloadSpeedLabel;

@@ -52,8 +52,10 @@ NSString *TTLocalMediaInfoPath(NSString *url) {
 NSString * const TTPlayerCustomScheme = @"MMTT";
 NSString * const TTPlayerCustomProtocol = @"MMTT://";
 NSString * const TTVideoDownloadSpeedNotification = @"TTVideoDownloadSpeedNotification";
+NSString * const TTVideoDownloadFailNotification  = @"TTVideoDownloadFailNotification";
 NSString * const TTDownloadSpeed = @"TTDownloadSpeed";
 NSString * const TTDownloadFinished = @"TTDownloadFinished";
+NSString * const TTDownloadError = @"TTDownloadError";
 BOOL TTOpenLog = NO;
 
 /** 把正常URL 转换成 当前代理识别URL 即在url前加上MMTT://  */
