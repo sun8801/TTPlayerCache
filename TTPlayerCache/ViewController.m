@@ -34,8 +34,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self setupPlayer];
-    
-    NSLog(@"\n\n沙盒目录》》：%@\n\n",NSHomeDirectory());
 }
 
 - (void)setupPlayer {

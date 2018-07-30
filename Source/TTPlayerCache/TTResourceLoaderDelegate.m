@@ -108,7 +108,7 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
         });
         return YES;
     }
-    return YES;
+    return NO;
 }
 
 - (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
@@ -231,6 +231,8 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
     
     _url = [loadingRequest.request.URL.absoluteString stringByReplacingOccurrencesOfString:TTPlayerCustomProtocol withString:@""];
     mutableURLRequest.URL = [NSURL URLWithString:_url];
+    
+    TTLog(@">>>下载URL>>:%@",_url);
     
     ////计算组装 Range ///////////////////
     if (toEnd) {

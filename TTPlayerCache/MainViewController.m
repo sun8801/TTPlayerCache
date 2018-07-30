@@ -26,13 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    TTOpenLog = YES;
+    
+    TTOpenLog = YES;
+    
+    [self showCacheSize];
+    
+    NSLog(@"\n\n沙盒目录》》：%@\n\n",NSHomeDirectory());
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self showCacheSize];
     });
 }
@@ -51,15 +56,18 @@
         NSString *videoUrl2 = @"http://7xplva.com2.z0.glb.qiniucdn.com/%E5%BA%8F%E5%88%97%2002_1.mp4";
         videoUrl2 = TTResourceUrlFromOrigianllUrl(videoUrl2);
         
-        //// 20+M
-        NSString *videoUrl3 = @"http://mp4.22mtv.com:9090/mp45/52596-%E8%90%A7%E7%A3%8A_%E6%A8%8A%E5%B0%91%E5%8D%8E-%E5%A5%BD%E5%85%84%E5%BC%9F%E4%B8%80%E8%BE%88%E5%AD%90[68mtv.com].mp4";
-        videoUrl3 = TTResourceUrlFromOrigianllUrl(videoUrl3);
-        
         ////200+M
         NSString *videoUrl4 = @"http://mov.bn.netease.com/open-movie/nos/mp4/2015/03/25/SAKKKQR8I_sd.mp4";
         videoUrl4 = TTResourceUrlFromOrigianllUrl(videoUrl4);
         
-        _dataSource = @[videoUrl0,videoUrl1,videoUrl2,videoUrl3,videoUrl4];
+        NSString *videoUrl5 = @"http://cache.utovr.com/201508270528174780.m3u8";
+        videoUrl5 = TTResourceUrlFromOrigianllUrl(videoUrl5);
+        
+        //http://7xl7r1.media1.z0.glb.clouddn.com/pY0FDgCJ0IkQwCvqUQQvyjonG6k=/lgDGHXFYRaMhLPUo2Ovmo3ba7ZTE/000000.ts
+        NSString *videoUrl6 = @"http://7xl7r1.media1.z0.glb.clouddn.com/pY0FDgCJ0IkQwCvqUQQvyjonG6k=/lgDGHXFYRaMhLPUo2Ovmo3ba7ZTE/000000.ts";
+        videoUrl6 = TTResourceUrlFromOrigianllUrl(videoUrl6);
+        
+        _dataSource = @[videoUrl0,videoUrl1,videoUrl2,videoUrl4, videoUrl5, videoUrl6];
     }
     return _dataSource;
 }

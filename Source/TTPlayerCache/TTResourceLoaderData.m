@@ -306,6 +306,10 @@ CFComparisonResult TTComparatorFunction( void *val1, void *val2, void *context) 
         }
     }else {
         TTLog(@"*********网络请求完成--succeed-**********");
+        TTTaskModel *taskModel = _taskModelDict[@(taskIdentifier)];
+        if (!taskModel.loadingRequest.isFinished) { //先判断是否finished
+            [taskModel.loadingRequest finishLoading];
+        }
     }
     [self removeTask:taskIdentifier];
 }

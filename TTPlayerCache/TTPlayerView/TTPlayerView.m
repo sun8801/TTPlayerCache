@@ -91,7 +91,6 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        TTOpenLog = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadSpeedChanged:) name:TTVideoDownloadSpeedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadFail:) name:TTVideoDownloadFailNotification object:nil];
     }
@@ -194,7 +193,7 @@ NSString *TTFilmLengthTransformToTimeString(id filmLength) {
     
     self.progressView.frame = CGRectMake(20, height -15, width -20 *2, 15);
     self.timeLengthLabel.frame = CGRectMake((width -150)/2.0, CGRectGetMinY(self.progressView.frame)-30, 150, 25);
-    self.downloadSpeedLabel.frame = CGRectMake(width -100 -10, 0, 100, 30);
+    self.downloadSpeedLabel.frame = CGRectMake(width -60 -10, 0, 60, 30);
 }
 
 
