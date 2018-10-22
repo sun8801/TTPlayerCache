@@ -62,12 +62,9 @@
         
         NSString *videoUrl5 = @"http://cache.utovr.com/201508270528174780.m3u8";
         videoUrl5 = TTResourceUrlFromOrigianllUrl(videoUrl5);
+
         
-        //http://7xl7r1.media1.z0.glb.clouddn.com/pY0FDgCJ0IkQwCvqUQQvyjonG6k=/lgDGHXFYRaMhLPUo2Ovmo3ba7ZTE/000000.ts
-        NSString *videoUrl6 = @"http://7xl7r1.media1.z0.glb.clouddn.com/pY0FDgCJ0IkQwCvqUQQvyjonG6k=/lgDGHXFYRaMhLPUo2Ovmo3ba7ZTE/000000.ts";
-        videoUrl6 = TTResourceUrlFromOrigianllUrl(videoUrl6);
-        
-        _dataSource = @[videoUrl0,videoUrl1,videoUrl2,videoUrl4, videoUrl5, videoUrl6];
+        _dataSource = @[videoUrl0,videoUrl1,videoUrl2,videoUrl4, videoUrl5];
     }
     return _dataSource;
 }
