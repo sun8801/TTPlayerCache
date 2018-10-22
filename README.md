@@ -4,7 +4,7 @@ AVPlayer 视频离线缓存、可以边下边播放、部分缓存、断网处�
 # [简书地址](http://www.jianshu.com/p/7fe8bce3d76)
 
 # CocoaPods
-  > pod  'TTPlayerCache' '~> 0.2.0'
+  > pod  'TTPlayerCache', '~> 0.2.0'
   
  ### 用法:
 ```
