@@ -246,13 +246,20 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
 }
 
 #pragma mark -下载数据
-- (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response {
+- (BOOL)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response {
     [self showNetworkActivityIndicator];
+    __block BOOL allow = YES;
     dispatch_sync(TT_resourceLoader_deal_queue(), ^{
         if (!_data.hasConfigured) {
-            [_data configContentLength:[TTResourceLoaderData caculateVideoResponseContentLength:(NSHTTPURLResponse *)response] MIMEType:response.MIMEType];
+            long long contentLength = [TTResourceLoaderData caculateVideoResponseContentLength:(NSHTTPURLResponse *)response];
+            if (contentLength == 0 || ![[response.MIMEType lowercaseString] containsString:@"video"]) {
+                allow = NO;
+            }else {
+                [_data configContentLength:contentLength MIMEType:response.MIMEType];
+            }
         }
     });
+    return allow;
 }
 
 - (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
@@ -371,12 +378,17 @@ static void url_session_manager_create_task_safely(dispatch_block_t block) {
 #pragma mark -NSURLSessionDownloadDelegate
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
     if (_downloadDelegate && [_downloadDelegate respondsToSelector:@selector(TT_downloadTaskDataTask:didReceiveResponse:)]) {
-        [_downloadDelegate TT_downloadTaskDataTask:dataTask didReceiveResponse:response];
+        BOOL allow = [_downloadDelegate TT_downloadTaskDataTask:dataTask didReceiveResponse:response];
+        completionHandler(allow?NSURLSessionResponseAllow : NSURLSessionResponseCancel);
+        if (!allow) {
+            NSString *msg = [NSString stringWithFormat:@"\n[ url can'tb be connect...\n(%@) ]\n", response.URL];
+            NSError *error = [NSError errorWithDomain:msg code:NSURLErrorBadURL userInfo:@{@"url":response.URL}];
+            [self postDownloadFinishedNotificationWithError:error];
+        }
     }else {
         completionHandler(NSURLSessionResponseCancel);
         return;
     }
-    completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task

@@ -39,7 +39,7 @@ extern BOOL TTOpenLog; //YES打印， 默认NO
 #define TTLog(format, ...) \
 if (TTOpenLog) { \
     NSString *fileName = [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] stringByReplacingOccurrencesOfString:@".m" withString:@""];\
-    fprintf(stderr, "\n>>%s:\n%s\n", [fileName UTF8String] , [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);\
+    fprintf(stderr, "\n>>%s:[%d]:\n%s\n", [fileName UTF8String] , __LINE__ , [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);\
 }
 
 #endif /* TTPlayerCache_h */

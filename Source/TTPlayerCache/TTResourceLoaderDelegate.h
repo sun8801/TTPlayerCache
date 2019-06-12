@@ -29,7 +29,7 @@ extern dispatch_queue_t TT_resourceLoader_delegate_queue(void);
 
 @protocol TTResourceLoaderDownloadTaskDelegate <NSObject>
 
-- (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response;
+- (BOOL)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response;
 - (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data;
 - (void)TT_downloadTaskDataTask:(NSURLSessionDataTask *)dataTask didCompleteWithError:(NSError *)error;
 
